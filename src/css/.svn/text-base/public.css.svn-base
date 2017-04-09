@@ -1,0 +1,340 @@
+/*header*/
+.header{
+	position:relative;
+	text-align: center;
+	height:1.1733333333rem;
+	line-height: 1.1733333333rem;
+	font-size: 0.48rem;
+}
+.white-header{
+	background: #fff;
+	color: #444444;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.blue-header{
+	background: #0EA3F0;
+	color: #ffffff;
+	border-bottom: 1px solid #0EA3F0;
+}
+
+.header-white-icon{
+	position: absolute;
+	top: 0;
+	left: 0;
+    background: url(../imgs/icons/arrow-white-left.png) center  no-repeat;
+    background-size:0.293333rem;
+	width: 1.12rem;
+    height: 1.173333rem;
+}
+
+.header-gray-icon{
+	position: absolute;
+	top: 0;
+	left: 0;
+    background:url(../imgs/icons/arrow-left.png) center  no-repeat;
+    background-size:0.253333rem;
+	width: 1.12rem;
+    height: 1.173333rem;	
+}
+/*order link modul*/
+.order-link{
+	padding:0.8rem 0.4533333333rem;
+	background: #ffffff;
+	color: #444444;
+}
+.order-link-tit{
+	height: 0.6933333333rem;
+	line-height: 0.6933333333rem;
+}
+.order-link-redname{
+	color: #fc8800;
+	vertical-align: 25%;
+}
+.order-link-redcon{
+	color: #fc8800;
+	border-left: 1px dotted #FC8800;
+}
+.order-link-grayname{
+	color: #999999;
+	vertical-align: 15%;
+}
+.order-link-graycon{
+	color: #999999;
+	border-left: 1px dotted #999999;
+}
+.order-link-name{
+	margin-left: 0.2666666667rem;
+	font-size: 0.4533333333rem;	
+}
+.order-link-con{
+	font-size: 0.3466666667rem;
+	display: block;
+	margin:0.08rem 0 0 0.3466666667rem;
+	padding:0 0 0.8rem 0.6666666667rem;
+	line-height: 0.5333333333rem;
+}
+.order-link-con .order-link--time{
+	font-size: 0.32rem;
+}
+.order-link-finish{
+	height: 0.6933333333rem;
+	color: #999999;
+}
+/*button*/
+.order-btn-gap{
+	margin: 0 0.4533333333rem;
+}
+.order-btn-gap .order-btn-gray{	
+	display:block;
+	width: 100%;
+	height: 1.1733333333rem;
+	line-height: 1.1733333333rem;
+	color: #ffffff;
+	background: #CCCCCC;
+	font-size:0.48rem;
+	text-align: center;
+	border-radius: 0.1333333333rem;
+	padding: 0;
+    border: none;	
+}
+.order-btn-gap .order-btn-blue{	
+	display:block;
+	width: 100%;
+	height: 1.1733333333rem;
+	line-height: 1.1733333333rem;
+	color: #ffffff;
+	background: #0EA3F0;
+	font-size:0.48rem;
+	text-align: center;
+	border-radius: 0.1333333333rem;
+	padding: 0;
+    border: none;	
+}
+
+/*serve-tel*/
+.order-serve-tel{
+	margin: 1.3333333333rem 0 2.2266666667rem;
+}
+.order-serve-bg{
+	margin: 0 auto;
+	display: block;
+	width: 3.7066666667rem;
+	height: 1.6266666667rem;
+	background: url(../imgs/icons/telbg.png) no-repeat center;
+	background-size:3.706667rem;
+	color: #b7b7b7;
+	font-size: 0.2933333333rem;
+	text-align: center;
+	padding-top: 0.4666666667rem;
+	line-height: 0.4666666667rem;
+}
+
+/*order tap*/
+.order-tap{	
+	width: 100%;
+	height: 1.0666666667rem;
+	line-height:0.4933333333rem;
+	border-bottom: 1px solid #DEDEDE;
+	background: #fff;
+}
+.order-tap li{
+	float: left;
+	height: 0.5333333333rem;
+	width: 50%;
+	border-left: 1px solid #DEDEDE;
+	text-align: center;
+	font-size: 0.4rem;
+	margin: 0.2666666667rem 0;
+}
+.order-tap li:first-child{
+	border-left: none;
+}
+
+.order-tap li.order-tap-on .order-tap-name{
+	display: block;
+	color: #0ea3f0;
+	border-bottom: 0.04rem solid #0ea3f0;
+	padding-bottom: 0.2666666667rem;
+	margin: 0 0.2666666667rem;
+}
+/*orderlist*/
+.order-tap-sub{
+	height: 1.0666666667rem;
+	background: #F5F5F5;
+	color: #666666;
+	font-size:0.346667rem;
+}
+.order-tap-sub ul{
+	display: box;			  /* OLD - Android 4.4- */
+	display: -webkit-box;	  /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -webkit-flex;	 /* NEW - Chrome */
+	display: flex;
+	-webkit-align-content:center ;
+	        align-content:center ;
+	        
+}
+.order-tap-sub li{
+	flex: auto;
+	height: 1.0666666667rem;
+    line-height: 1.0666666667rem;
+    text-align: center;
+}
+.order-tap-sub li a{
+	color: #666666;
+}
+.order-tap-sub li a.tap-sub-active{
+	border:1px solid #0ea3f0;
+	border-radius: 0.1333333333rem;
+	padding:0.066667rem 0.4666666667rem;
+	color: #0ea3f0;
+}
+
+/*del-input */
+.del-input+i{
+	display:block;
+	width:1.146667rem;
+	height:1.146667rem;
+	position: absolute;
+	right:0;
+	background: red;
+	top: 0;
+	background: url(../imgs/login/login-del-black.png) no-repeat center;
+	background-size:0.453333rem ;
+}
+
+/*error*/
+.error-con{
+	text-align: center;
+	width: 100%;
+}
+.error-img{
+	display:inline-block;
+	margin-top: 2.4rem;
+	background: url(../imgs/404.png) no-repeat center;
+	width: 4.28rem;
+	height: 4.293333rem;
+	background-size: 4.28rem;
+}
+.error-txt{
+	color: #444444;
+	font-size: 0.48rem;
+}
+.error-count{
+	margin-top: 0.266667rem;
+	color: #999999;
+	font-size:0.32rem;
+}
+.error-count i{
+	font-size: 0.48rem;
+	color: #fc3b00;
+	margin-right:0.133333rem;
+}
+.error-btn-gap{
+	margin-top: 1.466667rem;
+	width: 100%;
+	text-align: center;
+}
+.error-btn-white{
+	display: inline-block;
+	width: 4.133333rem;
+	height: 1.1733333333rem;
+	line-height: 1.1733333333rem;
+	color: #0EA3F0;
+	background: #ffffff;
+	font-size:0.48rem;
+	text-align: center;
+	border-radius: 0.1333333333rem;
+	padding: 0;
+	border:1px solid #0EA3F0;
+}
+
+/*加载刷新问题*/
+.mui-scroll-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 3.333333rem;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+/*弹出层图像密码验证*/
+.mask{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	-moz-opacity: 0.35;
+	opacity: 0.35;
+	fliter: alpha(opacity=35%);
+	z-index: 100;
+}
+.pupCon{
+	z-index: 101;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -4.0rem;
+	margin-top: -2.4rem;
+	width:8.0rem;
+	height:4.8rem;
+	border-radius: 13px;
+	background: #ffffff;
+	padding: 0.4rem 0.8rem;
+	text-align: center;
+}
+.pupCon-title{
+	font-size: 17px;
+    margin:0.133333rem 0;
+}
+
+.pupCon-inputwraper {
+    background-color: #fff;
+    border: 1px solid #dedede;
+    height: 42px;
+    width: 6.4rem;
+}
+.pupCon-inputwraper input {
+    float: left;
+    width: 3.68rem;
+    border: none;
+    font-size: 0.346667rem;
+    padding: 0 0 0 0.2rem;
+    margin: 0;
+}
+.pupCon-btngrounp{
+	margin-top: 0.2rem;
+}
+.pupCon-btn{
+	width: 2.666667rem;
+    text-align: center;
+    margin-left: 0.16rem;
+    margin-right:0.16rem;
+    padding: 10px 0px 13px;
+    display: inline-block;
+    height: auto;
+    line-height: 1;
+    border-radius: 5px !important;
+    font-size: 17px;
+}
+.pupCon-btncancel{
+    background-color: #fff;
+    border: 1px solid #b5b5b5;
+    color: #999;
+}
+.pupCon-btnok{
+    background-color: #0ea3f0;
+    border: 1px solid #0ea3f0;
+    color: #fff;
+}
+
+/*以下是v2.0新增*/
+.v2bg{
+	display: block;
+	background: url('../imgs/v2_h5bg.png') no-repeat;
+	background-size:2.666667rem auto;
+}

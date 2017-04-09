@@ -1,0 +1,201 @@
+/*
+create by landy
+2016-10-19
+*/
+.plat-header{
+	background: url('../../static/imgs/v2_jobbg.png') no-repeat;
+	background-size: 100% 100%;
+	color: #ffffff;
+	padding-bottom: 6%;
+}
+.plat-header h2{
+	padding-top: 0.8rem;
+	font-size: 0.48rem;
+	text-align: center;
+}
+
+.plat-headercon{
+	position: relative;
+	font-size: 0.533333rem;
+	text-align: center;
+	border: 1px solid rgba(255,255,255,0.7);
+	border-top: none;
+	width: 70%;
+	height: 40%;
+	margin-left: 15%;
+	margin-top: 7%;
+
+}
+.plat-headercon h3{
+	position: absolute;
+	top: -0.24rem;
+	left: 40%;
+	font-size: 0.533333rem;
+}
+
+.plat-headerline-left{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 35%;
+	height: 1px;
+	border-top: 1px solid rgba(255,255,255,0.7);
+}
+.plat-headerline-right{
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	width: 35%;
+	height: 1px;
+	border-top: 1px solid rgba(255,255,255,0.7);
+}
+.plat-headermsg{
+	line-height: 380%;
+}
+
+.plat-main{
+	margin:0.133333rem 0.453333rem;
+}
+.plat-main .plat-item{
+	background: #ffffff;
+	margin-top: 0.266667rem;
+}
+.plat-main .plat-item h2{
+	width: 2.266667rem;
+	height: 1.12rem;
+	line-height: 1.12rem;
+	color: #444444;
+	font-size: 0.4rem;
+	text-align: center;
+}
+.plat-item-link{
+	display: flex;
+}
+.plat-item-link li{
+	flex: 4;
+	text-align: center;
+	border-left: 1px solid #ececec;
+	margin-left: -1px;
+	height: 1.333333rem;
+	padding-top: 0.08rem;
+	margin-top: 0.186667rem;
+	margin-bottom: 0.36rem;
+}
+.plat-item-link li.none{
+	border-left: none;
+}
+
+@keyframes icon-play{
+	0%{
+		opacity: 0;
+		transform: translate(0,0.706667rem);
+	}
+	100%{
+		opacity: 1;
+		transform: translate(0,0);
+	}
+}
+
+.plat-icon-txt{
+	font-size: 0.32rem;
+	color: #444444;
+	opacity: 0;
+	 -webkit-animation: icon-play 3s;
+	 animation: icon-play 3s;
+	 -webkit-animation-fill-mode: forwards ;
+	 animation-fill-mode: forwards ;
+}
+
+.plat-icon{
+	position: relative;
+	height: 0.706667rem;
+	margin: 0 auto;
+	opacity: 0;
+	-webkit-animation: icon-play 0.5s;
+	animation: icon-play 0.5s;
+	-webkit-animation-fill-mode: forwards ;
+	animation-fill-mode: forwards ;
+}
+
+.plat-icon i{
+	position: absolute;
+	top: -0.133333rem;
+	right: -0.306667rem;
+	background: #fc3b00;
+	border-radius: 30%;
+	color: #ffffff;
+	font-size: 0.266667rem;
+	line-height: 0.426667rem;
+	padding: 0 0.133333rem;
+}
+.plat-icon1{
+	background-position: 0 0;
+	width: 0.586667rem;
+}
+.plat-icon2{
+	background-position: 0 -0.733333rem;
+	width: 0.586667rem;	
+	animation-delay: 0.2s;
+}
+.plat-icon3{
+	background-position: 0 -1.533333rem;
+	width: 0.52rem;
+	animation-delay: 0.3s;
+}
+.plat-icon4{
+	background-position: 0 -2.306667rem;
+	width: 0.626667rem;
+	animation-delay: 0.4s;
+}
+
+.plat-icon5{
+	background-position: 0 -3.066667rem;
+	width: 0.44rem;
+	animation-delay: 0.5s;
+}
+.plat-icon6{
+	background-position: 0 -3.8rem;
+	width: 0.586667rem;	
+	animation-delay: 0.6s;
+}
+.plat-icon7{
+	background-position: 0 -4.6rem;
+	width: 0.773333rem;
+	animation-delay: 0.7s;
+}
+.plat-icon8{
+	background-position: 0 -5.333333rem;
+	width: 0.546667rem;
+	animation-delay: 0.8s;
+}
+
+.plat-icon9{
+	background-position: 0 -6.066667rem;
+	width: 0.533333rem;
+	animation-delay: 0.9s;
+}
+.plat-icon10{
+	background-position: 0 -6.8rem;
+	width: 0.613333rem;
+	animation-delay: 1s;
+}
+.plat-icon11{
+	background-position: 0 -7.533333rem;
+	width: 0.613333rem;
+	height: 0.613333rem;
+}
+
+.plat-waiting{
+	margin-top: -0.08rem;
+	margin-left: 10%;
+	border: 1px dashed #e5e5e5;
+	padding: 0.093333rem;
+	height: 1.333333rem;
+	width: 80%;
+}
+.plat-waiting-txt{
+	font-size: 0.266667rem;
+	color: #999999;
+}

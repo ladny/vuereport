@@ -1,0 +1,214 @@
+<template>
+<div class="visitDoConfirm">
+	<div class="maincontent">
+		<div v-title>订单详情</div>
+	<div v-if="message" class="nullmessage">
+		<span>
+			{{message}}
+		</span>
+	</div>
+	<div v-else>
+	<div class="pawn">
+		<h2>业务员信息</h2>
+		<saler :salername="userInfo.real_name" :telno="userInfo.phone" :company="userInfo.company_name"></saler>
+
+		<h2>权证指令<span class="qzdate">{{ warrantInfo.warrant_add_time }}</span></h2>
+		<div class="pawnmain">
+			<dl>
+				<dt>权证下发人:</dt>
+				<dd>{{warrantInfo.warrant_user_name}}</dd>
+			</dl>
+			<dl>
+				<dt>核心备注：</dt>
+				<dd>{{warrantInfo.warrant_comment}}</dd>
+			</dl>
+			<div v-for="item in warrantInfo.warrant_action_home">
+				<dl>
+					<dt>家访类别：</dt>
+					<dd>{{item.name}}</dd>
+				</dl>
+				<dl>
+					<dt>家访地址：</dt>
+					<dd>{{item.address}}</dd>
+				</dl>
+			</div>
+				
+		</div>
+
+		<h2  v-if="loan_mortgage_type==1">房产抵押<span class="pawntype">{{businessHouse.loan_mortgage_type}}</span></h2>
+		<div class="pawnmain"  v-if="loan_mortgage_type==1">
+			<dl>
+				<dt>抵押物性质：</dt>
+				<dd>{{businessHouse.loan_house_property}}</dd>
+			</dl>
+			<dl>
+				<dt>商业区域：</dt>
+				<dd>{{businessHouse.loan_house_province_name}}-{{businessHouse.loan_house_city_name}}-{{businessHouse.loan_house_area_name}}</dd>
+			</dl>
+			<dl>
+				<dt>抵押物地址：</dt>
+				<dd>{{businessHouse.loan_house_detailed_address}}</dd>
+			</dl>
+			<dl>
+				<dt>借款人姓名：</dt>
+				<dd>{{loanInfo.user_name}}</dd>
+			</dl>
+			<dl v-if="businessHouse.loan_user_more==1">
+				<dt>第二借款人：</dt>
+				<dd v-for='item in businessHouse.loan_user_more_info'>{{item.user_name}}</dd>
+			</dl>
+			<dl>
+				<dt>使用说明：</dt>
+				<dd>{{businessHouse.loan_house_use}}</dd>
+			</dl>
+			<dl>
+				<dt>住户说明：</dt>
+				<dd>{{businessHouse.loan_house_live_people}}</dd>
+			</dl>
+		</div>
+
+		<h2 v-if="loan_mortgage_type==2">车辆抵押<span class="pawntype">{{businessCar.loan_mortgage_type}}</span></h2>
+		<div class="pawnmain" v-if="loan_mortgage_type==2">
+			<dl>
+				<dt>抵押物性质：</dt>
+				<dd>{{loan_cartype}}</dd>
+			</dl>
+			<dl>
+				<dt>车辆品牌：</dt>
+				<dd>{{businessCar.loan_car_brand}}</dd>
+			</dl>
+			<dl>
+				<dt>车辆型号：</dt>
+				<dd>{{businessCar.loan_car_model}}</dd>
+			</dl>
+			<dl>
+				<dt>借款人姓名：</dt>
+				<dd>{{loanInfo.user_name}}</dd>
+			</dl>
+			<dl v-if="businessCar.loan_user_more==1">
+				<dt>第二借款人：</dt>
+				<dd v-for='item in businessCar.loan_user_more_info'>{{item.user_name}}</dd>
+			</dl>
+			<dl>
+				<dt>名下资产：</dt>
+				<dd>{{loan_other_asset}}</dd>
+			</dl>
+		</div>
+	</div>
+	</div>
+	<bluebtn :isGet="loanInfo.house_visit_user_id
+" :btnList="ButtonShow" :authority="authority" :user_token='user_token' :loan_id='loan_id' :loan_mortgage_type='loan_mortgage_type' :visit_id="visit_id" :type="type"></bluebtn>
+
+</div>
+</div>
+</template>
+<script type="text/ecmascript-6">
+	import headerBack from '../headerComponent/HeaderBack'
+	import bluebtn from '../bottomComponent/BlueBtn'
+	import navList from '../navComponent/NavList'
+	import saler from '../conclusionComponent/saler'
+	import warrantInfo from '../conclusionComponent/warrantInfo'
+	import {urlParse} from '../../js/util'
+
+	export default {
+		data(){
+			return {
+				data:{},
+				userInfo:{},
+				loanInfo:{},
+				businessHouse:{},
+				businessCar :{},
+				warrantInfo:{},
+				loan_cartype:'',
+				loan_other_asset:'',
+				ButtonShow:{},
+				loan_id: (() => {
+					let queryParam = urlParse();
+					return queryParam.loan_id;
+				})(),
+				user_token: (() => {
+				let queryParam = urlParse();
+					return queryParam.user_token;
+				})(),
+				loan_mortgage_type: (() => {
+				let queryParam = urlParse();
+					return queryParam.loan_mortgage_type;
+				})(),
+				authority: (() => {
+				let queryParam = urlParse();
+					return queryParam.authority;
+				})(),
+				order_status: (() => {
+				let queryParam = urlParse();
+					return queryParam.order_status;
+				})(),
+				message: (() => {
+					let queryParam = urlParse();
+					return queryParam.message;
+				})(),
+				visit_id:(() => {
+					let queryParam = urlParse();
+					return queryParam.visit_id;
+				})(),
+				type:(() => {
+					let queryParam = urlParse();
+					return queryParam.type;
+				})(),
+			   }
+		},
+    	components: {
+	      headerBack,
+	      bluebtn,
+	      navList,
+	      saler,
+	      warrantInfo
+	    },
+	     methods:{
+	    	getData:getData
+	    },
+	    mounted: function() {
+	    	this.getData();
+	    }
+  } 
+ 
+  //获取数据信息
+  function getData() {
+  	//用户ID userId 订单ID loan_id code	0为成功，
+    this.$http.get(this.$store.state.apiUrl+'/loan/getOrderDetail?loan_id='+this.loan_id+'&user_token='+this.user_token+'&visit_id='+this.visit_id+'&type='+this.type+'&role_code='+this.authority+'&order_status='+this.order_status).then((response) => {
+    	response = response.body;
+    	if(response.code == 0){
+    		this.data = response.data.notaryInfo;
+    		this.userInfo=response.data.userInfo;
+    		this.loanInfo=response.data.loanInfo;
+    		this.businessHouse=response.data.businessHouse; 
+    		this.ButtonShow=response.data.ButtonShow.button;
+    		this.businessCar=response.data.businessCar;
+    		this.warrantInfo=response.data.warrantInfo;
+    		if(this.businessCar.loan_is_local_car==1)//抵押物性质
+    			this.loan_cartype="本地车";
+			else
+    			this.loan_cartype="外地车";
+    		if(this.businessCar.loan_other_asset=="")//名下资产
+    			this.loan_other_asset="无";
+    		else
+    			this.loan_other_asset=this.businessCar.loan_other_asset
+
+    	}else{
+    		console.log("请求失败！！！");
+    	}
+    })
+}
+ 
+
+</script>
+<style>
+	/*.visit-confirm-box{
+		position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 1;
+	    width: 100%;
+	    overflow-y: auto;
+	    -webkit-overflow-scrolling: touch;
+	}*/
+</style>
